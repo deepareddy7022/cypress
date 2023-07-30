@@ -15,9 +15,10 @@
 #           build: npm run build
 #           start: npm start
 #           browser: chrome
-
+#[push] 
 name: Cypress Artifacts
-on: [push]
+on: [worfklow_dispatch]
+
 jobs:
  cypress-run:
    runs-on: ubuntu-latest
