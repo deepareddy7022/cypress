@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-30T08:19:49.888Z",
+    "end": "2023-07-30T08:20:01.408Z",
+    "duration": 11520,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9b073cde-bf70-4fca-bcb6-fd241ca570f1",
+      "title": "",
+      "fullFile": "cypress/e2e/locators.cy.js",
+      "file": "cypress/locators.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "141e9d6d-f5dc-4dcc-9343-254a5914e93c",
+          "title": "Validate locators",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "CSS",
+              "fullTitle": "Validate locators CSS",
+              "timedOut": null,
+              "duration": 9381,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/locators.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/locators.cy.js/Validate locators -- CSS (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "let brokenLinks = 0;\nlet activeLinks = 0;\n//and, or, contains, get, find, \ncy.visit(\"https://qavbox.github.io/demo/links/\");\ncy.get('a').each($link => {\n  const href = $link.attr('href');\n  if (href) {\n    cy.request({\n      url: href,\n      failOnStatusCode: false\n    }).then(response => {\n      if (response.status >= 400) {\n        cy.log(`***Broken links*** ${href}`);\n        brokenLinks++;\n      } else {\n        cy.log(`Active link ${href}`);\n        activeLinks++;\n      }\n    });\n  }\n}).then($links => {\n  const totalLinks = brokenLinks + activeLinks;\n  cy.log(`total: ${totalLinks}, brokenLinks: ${brokenLinks}, activeLinks: ${activeLinks}`);\n});\n//  cy.title().should('contain', \"Registration Form\")\n// cy.get(\"#username\").type(\"Deepa Reddy\")\n// cy.get(\"#username\").blur()\n// cy.get(\"#username\").focus()\n//cy.get('input[id *= \"usern\"]').type(\"Deepa\")//contains\n//cy.get('input[id$=\"name\"]').type(\"Reddy\")//ends with\n// cy.get(\"input[id^='user']\").type(\"Deepa Vamsi\")//starts with \n//cy.get(\"#mygroup+p\")// gets first Paragraph which are siblings of mygroup\n//cy.get(\"#mygroup~p\")// gets all paragraphs which are siblings of mygroup\n// cy.get(\"input\").eq(3).type(\"8987676765\")\n// cy.get(\"input[name= 'experience']\").last().check().should(\"be.checked\", true)\n// cy.get(\"input[value= 'five']\").should(\"not.be.checked\", true)\n// cy.get(\"input[id='ip']\").first().check()\n// cy.get(\"input[id='ip']\").last().check()\n// cy.get(\"input[id='ip']\").first().uncheck().should(\"not.be.checked\", true)\n//cy.get(\"input[id='ip']\").check(\"apitesting\").should(\"be.checked\", true).and('have.value', \"apitesting\")\n// cy.get(\"input[id='ip']\").check(\"apitesting\").invoke('prop', \"checked\").then((myProp) => {\n//     cy.log(myProp)\n// })\n// cy.get(\"select[name='sgender']\").select('Female').should('have.value', \"female\")//bytext\ncy.get(\"select[name='sgender']\").select('Female').then(val => {\n  expect(val.text()).to.eq(\"Female\");\n});\n// cy.get(\"select[name='sgender']\").select('male')//byvalue\n// cy.get(\"select[name='sgender']\").select(3).should('have.value', \"na\")//byIndex\n//  cy.get(\"select[name='sgender']\").select([2, 3]).should('have.value', \"na\")//byIndex\n// cy.get(\"select[name='sgender']\").select('na')\n// cy.get(\"[name='sgender']\").find(\"option:selected\").should('have.text', \"Not Applicable\")\n// cy.get(\"#tools\").select([\"Docker\", \"JMeter\", \"CodedUI\"]).invoke('val').should('deep.equal', ['docker', 'jmeter', 'codedui'])\n// cy.get(\"#tools\").select([\"Docker\", \"JMeter\", \"CodedUI\"]).find('option:selected').each(($el) => {\n//     cy.wrap($el).invoke('val').then((myVal) => {\n//         cy.log(myVal)\n//     })\n// })\n//cy.get(\"#tools\").select([\"Docker\", \"JMeter\", \"CodedUI\"])\n// cy.get(\"input[id='ip']\").check(\"apitesting\").invoke('prop', \"checked\").should('have.value', 'true')\n// cy.get(\"input[id='ip']\").check([\"testng\", \"manualtesting\", \"java\"])\n//cy.get(\"#username\").type(\"deepa\").invoke('val').then((myVal) => {\n//     cy.log(myVal)\n// })\n// cy.get(\"label[id='lblname']\").invoke('text').then((myText) => {\n//     cy.log(myText)\n// })\n// cy.visit(\"https://qavbox.github.io/demo/listitems/\")\n// cy.get(\"#mygroup\").find(\"li:nth-child(0)\").should(\"contain\", \"List Item 2\")",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `select[name='sgender']`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: `select[name='sgender']`, but never found it.\n    at Context.eval (webpack:///./cypress/e2e/locators.cy.js:57:11)",
+                "diff": null
+              },
+              "uuid": "74ae8d0c-8fcf-49f2-a23c-1f4bd3d2ee87",
+              "parentUUID": "141e9d6d-f5dc-4dcc-9343-254a5914e93c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "74ae8d0c-8fcf-49f2-a23c-1f4bd3d2ee87"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9381,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

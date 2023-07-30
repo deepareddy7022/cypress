@@ -1,0 +1,135 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 1,
+    "failures": 1,
+    "start": "2023-07-30T08:19:38.838Z",
+    "end": "2023-07-30T08:19:39.503Z",
+    "duration": 665,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 50,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "860707bd-b7b7-44b7-9b9d-cc158a2b55f6",
+      "title": "",
+      "fullFile": "cypress/e2e/getAPI.cy.js",
+      "file": "cypress/getAPI.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0dc95dee-b6a1-4617-b29c-25fb417b727a",
+          "title": "API Testing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "GET API",
+              "fullTitle": "API Testing GET API",
+              "timedOut": null,
+              "duration": 591,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/getAPI.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/getAPI.cy.js/API Testing -- GET API (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.request({\n  method: 'GET',\n  url: \"https://gorest.co.in/public/v2/users\",\n  headers: {\n    Authorization: \"Bearer 5d646d3cfeb4020346b4a91a90a63681c2ae438724cd4162eb9bff7242db0501\"\n  }\n}).then(response => {\n  cy.log(JSON.stringify(response));\n  expect(response.status).to.be.eq(200);\n  expect(response.body[0].name).to.be.eq(\"Deepa\");\n  expect(response.body[0]).has.property(\"email\", \"Macy_Purdy@hotmail.com\");\n});",
+              "err": {
+                "message": "AssertionError: expected { Object (id, name, ...) } to have property 'email' of 'Macy_Purdy@hotmail.com', but got 'Addison_Cronin@gmail.com'",
+                "estack": "AssertionError: expected { Object (id, name, ...) } to have property 'email' of 'Macy_Purdy@hotmail.com', but got 'Addison_Cronin@gmail.com'\n    at Context.eval (webpack:///./cypress/e2e/getAPI.cy.js:14:41)",
+                "diff": "- 'Addison_Cronin@gmail.com'\n+ 'Macy_Purdy@hotmail.com'\n"
+              },
+              "uuid": "c266d920-83b9-46ad-849c-0c441b5d72bf",
+              "parentUUID": "0dc95dee-b6a1-4617-b29c-25fb417b727a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "GET particular id",
+              "fullTitle": "API Testing GET particular id",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress/e2e/getAPI.cy.js\"\n}",
+              "code": "cy.request({\n  method: 'GET',\n  url: \"https://gorest.co.in/public/v2/users/3962299\",\n  headers: {\n    Authorization: \"Bearer 5d646d3cfeb4020346b4a91a90a63681c2ae438724cd4162eb9bff7242db0501\"\n  }\n}).then(response => {\n  expect(response.status).to.be.eq(200);\n  expect(response.body.name).to.be.eq('Aaryan Gandhi');\n});",
+              "err": {},
+              "uuid": "d5392734-7e1f-44be-9e0a-70e5f144037d",
+              "parentUUID": "0dc95dee-b6a1-4617-b29c-25fb417b727a",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "c266d920-83b9-46ad-849c-0c441b5d72bf"
+          ],
+          "pending": [
+            "d5392734-7e1f-44be-9e0a-70e5f144037d"
+          ],
+          "skipped": [],
+          "duration": 591,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

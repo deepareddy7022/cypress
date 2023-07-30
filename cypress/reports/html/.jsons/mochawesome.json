@@ -1,0 +1,188 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 3,
+    "failures": -3,
+    "start": "2023-07-30T08:18:40.130Z",
+    "end": "2023-07-30T08:18:46.478Z",
+    "duration": 6348,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 60,
+    "other": 3,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3ce652ca-19c8-404c-b70e-1edbdab0fc4a",
+      "title": "",
+      "fullFile": "cypress/e2e/alert.cy.js",
+      "file": "cypress/alert.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "6c09c38c-d396-44e6-94b2-07627d9b19e2",
+          "title": "Alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "alert-accept ",
+              "fullTitle": "Alerts alert-accept ",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress/e2e/alert.cy.js\"\n}",
+              "code": "cy.visit(\"https://qavbox.github.io/demo/alerts/\");\ncy.get(\"#confirm\").click();\ncy.on('window:confirm', confirm => {\n  expect(confirm).to.contains(\"Press a button!\");\n});",
+              "err": {},
+              "uuid": "63efe230-8791-442e-9b1c-437d7e50c905",
+              "parentUUID": "6c09c38c-d396-44e6-94b2-07627d9b19e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "alert- cancel",
+              "fullTitle": "Alerts alert- cancel",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress/e2e/alert.cy.js\"\n}",
+              "code": "cy.visit(\"https://qavbox.github.io/demo/alerts/\");\ncy.get(\"#confirm\").click();\ncy.on('window:confirm', () => false);\ncy.get(\"#Parademo\").should('have.text', \"You pressed Cancel!\");",
+              "err": {},
+              "uuid": "e0140a93-0222-45a5-8544-fcc446b1a71a",
+              "parentUUID": "6c09c38c-d396-44e6-94b2-07627d9b19e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "alert- Prompt",
+              "fullTitle": "Alerts alert- Prompt",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress/e2e/alert.cy.js\"\n}",
+              "code": "cy.visit(\"https://qavbox.github.io/demo/alerts/\");\ncy.get(\"#confirm\").click();\ncy.window().then(win => {\n  cy.stub(win, 'prompt').returns(\"Deepa\");\n});\ncy.get(\"input[onClick='myFunctionPrompt()']\").click();\n//cancel\ncy.on('window:prompt', () => false);\ncy.get(\"#Parademo\").should('not.be.visible');",
+              "err": {},
+              "uuid": "17ea9942-77cb-4247-ba8d-0d95624a6b59",
+              "parentUUID": "6c09c38c-d396-44e6-94b2-07627d9b19e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "alert- auth",
+              "fullTitle": "Alerts alert- auth",
+              "timedOut": null,
+              "duration": 2877,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/alert.cy.js\"\n}",
+              "code": "cy.visit(\"https://the-internet.herokuapp.com/basic_auth\", {\n  auth: {\n    username: \"admin\",\n    password: \"admin\"\n  }\n});\ncy.get(\".example p\").should('have.contain', \"Congratulations\");",
+              "err": {},
+              "uuid": "b49af6cd-bdd8-49df-bf2b-15f19cb2ea55",
+              "parentUUID": "6c09c38c-d396-44e6-94b2-07627d9b19e2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "alert- authURL",
+              "fullTitle": "Alerts alert- authURL",
+              "timedOut": null,
+              "duration": 434,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/alert.cy.js\"\n}",
+              "code": "cy.visit(\"https://admin:admin@the-internet.herokuapp.com/basic_auth\");\ncy.get(\".example p\").should('have.contain', \"Congratulations\");",
+              "err": {},
+              "uuid": "14d52894-d4b8-4d26-81ce-f70db768acfa",
+              "parentUUID": "6c09c38c-d396-44e6-94b2-07627d9b19e2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b49af6cd-bdd8-49df-bf2b-15f19cb2ea55",
+            "14d52894-d4b8-4d26-81ce-f70db768acfa"
+          ],
+          "failures": [],
+          "pending": [
+            "63efe230-8791-442e-9b1c-437d7e50c905",
+            "e0140a93-0222-45a5-8544-fcc446b1a71a",
+            "17ea9942-77cb-4247-ba8d-0d95624a6b59"
+          ],
+          "skipped": [],
+          "duration": 3311,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

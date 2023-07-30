@@ -1,0 +1,169 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 2,
+    "failures": -2,
+    "start": "2023-07-30T08:19:06.162Z",
+    "end": "2023-07-30T08:19:20.685Z",
+    "duration": 14523,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 50,
+    "other": 2,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "558e2bcf-7dba-407e-8681-a7bfe836d5b2",
+      "title": "",
+      "fullFile": "cypress/e2e/fileUpload.cy.js",
+      "file": "cypress/fileUpload.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "27fa0679-46d0-4746-bc9d-c555b80c96d2",
+          "title": "File Upload",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "file upload ",
+              "fullTitle": "File Upload file upload ",
+              "timedOut": null,
+              "duration": 6810,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress/e2e/fileUpload.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/fileUpload.cy.js/Success.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit(\"http://the-internet.herokuapp.com/upload\");\ncy.get(\"#file-upload\").attachFile(\"Deepa_reddy_cv.pdf\");\ncy.get(\"#file-submit\").click();\ncy.get(\".example h3\").should('have.text', \"File Uploaded!\").screenshot(\"Success\");",
+              "err": {},
+              "uuid": "6fb03941-c9c5-4404-bab5-62d1417307e5",
+              "parentUUID": "27fa0679-46d0-4746-bc9d-c555b80c96d2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "file uplaod- Rename ",
+              "fullTitle": "File Upload file uplaod- Rename ",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress/e2e/fileUpload.cy.js\"\n}",
+              "code": "cy.visit(\"http://the-internet.herokuapp.com/upload\");\ncy.get(\"#file-upload\").attachFile({\n  filePath: \"Deepa_reddy_cv.pdf\",\n  fileName: \"test.pdf\"\n});\ncy.get(\"#file-submit\").click();\ncy.get(\".example h3\").should('have.text', \"File Uploaded!\");",
+              "err": {},
+              "uuid": "8a90407a-f8b1-4538-8b43-367219e4d521",
+              "parentUUID": "27fa0679-46d0-4746-bc9d-c555b80c96d2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "drag and drop upload",
+              "fullTitle": "File Upload drag and drop upload",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-pending\",\n  \"value\": \"cypress/e2e/fileUpload.cy.js\"\n}",
+              "code": "cy.visit(\"http://the-internet.herokuapp.com/upload\");\ncy.get(\"#drag-drop-upload\").attachFile(\"Deepa_reddy_cv.pdf\", {\n  subjectType: 'drag-n-drop'\n});\ncy.get(\".dz-filename span\").contains(\"Deepa\");",
+              "err": {},
+              "uuid": "6d76f30f-cd36-418b-9d00-ce3218c41c11",
+              "parentUUID": "27fa0679-46d0-4746-bc9d-c555b80c96d2",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "multiple file upload",
+              "fullTitle": "File Upload multiple file upload",
+              "timedOut": null,
+              "duration": 2074,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n    \"value\": \"cypress/e2e/fileUpload.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/fileUpload.cy.js/upload page.png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit(\"https://davidwalsh.name/demo/multiple-file-upload.php\");\ncy.screenshot(\"upload page\");\ncy.get(\"#filesToUpload\").attachFile([\"test1.pdf\", \"test2.pdf\"]);\ncy.get('#fileList > li').should('not.contain.text', \"No\");",
+              "err": {},
+              "uuid": "03d18843-c2ab-450e-a015-70cb9bce58c1",
+              "parentUUID": "27fa0679-46d0-4746-bc9d-c555b80c96d2",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6fb03941-c9c5-4404-bab5-62d1417307e5",
+            "03d18843-c2ab-450e-a015-70cb9bce58c1"
+          ],
+          "failures": [],
+          "pending": [
+            "8a90407a-f8b1-4538-8b43-367219e4d521",
+            "6d76f30f-cd36-418b-9d00-ce3218c41c11"
+          ],
+          "skipped": [],
+          "duration": 8884,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

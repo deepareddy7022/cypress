@@ -1,0 +1,115 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2023-07-30T08:18:53.537Z",
+    "end": "2023-07-30T08:18:59.179Z",
+    "duration": 5642,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "07c6f9a4-e0bd-425a-87a2-d951e7bbb4be",
+      "title": "",
+      "fullFile": "cypress/e2e/dropdown.cy.js",
+      "file": "cypress/dropdown.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "9c4414f4-86e0-4fb3-ac19-09fe215aea1c",
+          "title": "dropdown",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "general dropdown",
+              "fullTitle": "dropdown general dropdown",
+              "timedOut": null,
+              "duration": 3406,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress/e2e/dropdown.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"/dropdown.cy.js/dropdown -- general dropdown (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.visit(\"https://qavbox.github.io/demo/signup/\");\n// cy.get('[name=\"sgender\"]').select(\"Female\").find('option:selected').should('have.text', \"Female\")\n// cy.get(\"[name='sgender']\").select('male').should('have.value', \"male\")\n// cy.get(\"[name='sgender']\").select('Not Applicable').should('have.value', \"na\")\n// cy.get(\"[name='sgender']\").select('Not Applicable').find('option:selected').invoke('text').then(($text) => {\n//     cy.log($text)\n// })\ncy.get('[name=\"sgender\"]').select(3);\n// cy.get('#tools').select(\"docker\")\ncy.get('#tools').select([\"Jenkins\", \"Postman\", \"JMeter\"]).invoke('val').should('deep.equal', [\"jenkins\", \"postman\", \"jmeter\"]);\n//cy.get('#tools').select([\"Jenkins\", \"Postman\", \"JMeter\"])//value\ncy.get('#tools').select([\"Jenkins\", \"Postman\", \"JMeter\"]).find('option:selected').each($ele => {\n  cy.wrap($el).invoke('val').then($myValue => {\n    cy.log($myValue);\n  });\n});",
+              "err": {
+                "message": "ReferenceError: $el is not defined",
+                "estack": "ReferenceError: $el is not defined\n    at Context.eval (webpack:///./cypress/e2e/dropdown.cy.js:18:20)",
+                "diff": null
+              },
+              "uuid": "98428003-00a7-4c15-8703-e6057575895e",
+              "parentUUID": "9c4414f4-86e0-4fb3-ac19-09fe215aea1c",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "98428003-00a7-4c15-8703-e6057575895e"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3406,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-07-30T08:19:02.938Z",
+    "end": "2023-07-30T08:19:03.129Z",
+    "duration": 191,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "8b3753a8-7c70-4c6b-bfca-5ba16c94129d",
+      "title": "",
+      "fullFile": "cypress/e2e/envHandling.cy.js",
+      "file": "cypress/envHandling.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "427c3734-800c-4b49-9763-fa01f2a419cd",
+          "title": "File Upload",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "file upload ",
+              "fullTitle": "File Upload file upload ",
+              "timedOut": null,
+              "duration": 94,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/envHandling.cy.js\"\n}",
+              "code": "cy.log(Cypress.env('QA'));",
+              "err": {},
+              "uuid": "334f90cd-127d-4a1c-b8cf-76c9ebe9aacb",
+              "parentUUID": "427c3734-800c-4b49-9763-fa01f2a419cd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "file upload ",
+              "fullTitle": "File Upload file upload ",
+              "timedOut": null,
+              "duration": 34,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/envHandling.cy.js\"\n}",
+              "code": "cy.log(Cypress.env('host'));",
+              "err": {},
+              "uuid": "8f5d1780-660b-42ee-a39a-99f3cc4a8ac0",
+              "parentUUID": "427c3734-800c-4b49-9763-fa01f2a419cd",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "file upload ",
+              "fullTitle": "File Upload file upload ",
+              "timedOut": null,
+              "duration": 30,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress/e2e/envHandling.cy.js\"\n}",
+              "code": "console.log(Cypress.env('name'));",
+              "err": {},
+              "uuid": "727401d9-4bd4-489c-acac-5fc87dd6b174",
+              "parentUUID": "427c3734-800c-4b49-9763-fa01f2a419cd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "334f90cd-127d-4a1c-b8cf-76c9ebe9aacb",
+            "8f5d1780-660b-42ee-a39a-99f3cc4a8ac0",
+            "727401d9-4bd4-489c-acac-5fc87dd6b174"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 158,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "custom-title",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress/reports/html/.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
