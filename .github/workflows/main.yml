@@ -1,18 +1,37 @@
-name: Cypress Tests using Cypress Docker Image
+# name: Cypress Tests using Cypress Docker Image
 
-on: push
+# on: push
 
+# jobs:
+#   cypress-run:
+#     runs-on: ubuntu-22.04
+#     container: cypress/browsers:node16.16.0-chrome107-ff107-edge
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v3
+#       - name: Cypress run
+#         uses: cypress-io/github-action@v5
+#         with:
+#           build: npm run build
+#           start: npm start
+#           browser: chrome
+
+name: Cypress Artifacts
+on: [push]
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
-    container: cypress/browsers:node16.16.0-chrome107-ff107-edge
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          build: npm run build
-          start: npm start
-          browser: chrome
-
+ cypress-run:
+   runs-on: ubuntu-latest
+   name: Test Artifacts
+   steps:
+     - uses: actions/checkout@v2
+     - uses: cypress-io/github-action@v4
+     - uses: actions/upload-artifact@v2
+       if: failure()
+       with:
+         name: cypress-screenshots
+         path: ./cypress/screenshots
+     - uses: actions/upload-artifact@v2
+       if: always()
+       with:
+         name: cypress-videos
+         path: ./cypress/videos
