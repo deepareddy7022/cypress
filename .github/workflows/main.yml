@@ -40,9 +40,7 @@
 
 name: Cypress Artifacts
 on: 
- push:
-    branches:
-      - 'master'
+ 
  workflow_dispatch:
 jobs:
  cypress-run:
